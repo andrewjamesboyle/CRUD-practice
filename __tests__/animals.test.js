@@ -3,13 +3,17 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 
-describe('backend-express-template routes', () => {
+describe('animals routes tests', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('example test - delete me!', () => {
-    expect(1).toEqual(1);
+
+  it('get', async () => {
+    const resp = await request(app).get('/animals');
+    expect(resp.status).toEqual(200);
+    expect(resp.body).toMatchInlineSnapshot();
   });
+
   afterAll(() => {
     pool.end();
   });
