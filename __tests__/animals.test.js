@@ -2,7 +2,6 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
-const Animal = require('../lib/models/Animal');
 
 describe('animals routes tests', () => {
   beforeEach(() => {
@@ -16,6 +15,18 @@ describe('animals routes tests', () => {
       Array [
         Object {
           "common_name": "Thrasher, curve-billed",
+          "is_pet": "false",
+        },
+        Object {
+          "common_name": "Ringtail, common",
+          "is_pet": "true",
+        },
+        Object {
+          "common_name": "Toucan, white-throated",
+          "is_pet": "false",
+        },
+        Object {
+          "common_name": "Goose, andean",
           "is_pet": "false",
         },
         Object {
@@ -78,15 +89,15 @@ describe('animals routes tests', () => {
     `);
   });
 
-  it('get/:id returns details of a single animal', async () => { 
+  it('get/:id returns details of a single animal', async () => {
     const resp = await request(app).get('/animals/1');
-    expect(resp.body).toEqual({
+    const expected = {
       id: 1,
       common_name: 'Thrasher, curve-billed',
       scientific_name: 'Toxostoma curvirostre',
       is_pet: false,
-    });
-    
+    };
+    expect(resp.body).toEqual(expected);
   });
 
   afterAll(() => {
