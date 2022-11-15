@@ -8,7 +8,7 @@ describe('animals routes tests', () => {
     return setup(pool);
   });
 
-  it('get', async () => {
+  it('get returns a list of animals', async () => {
     const resp = await request(app).get('/animals');
     expect(resp.status).toEqual(200);
     expect(resp.body).toMatchInlineSnapshot(`
@@ -98,6 +98,19 @@ describe('animals routes tests', () => {
       is_pet: false,
     };
     expect(resp.body).toEqual(expected);
+  });
+
+  it('#POST /animals creates a new animal', async () => {
+    const newAnimal = {
+      common_name: 'Raffy the Giraffe',
+      scientific_name: 'Raffimus, Gaffimus',
+      is_pet: true,
+    };
+    const resp = await request(app).post('/animals').send(newAnimal);
+    expect(resp.body).toEqual({
+      id: expect.any(Number),
+      ...newAnimal,
+    });
   });
 
   afterAll(() => {
