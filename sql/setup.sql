@@ -3,10 +3,10 @@
 DROP TABLE IF EXISTS animals;
 
 CREATE TABLE animals (
-	id BIGINT GENERATED ALWAYS AS IDENTITY,
+	id INT GENERATED ALWAYS AS IDENTITY,
 	common_name VARCHAR(50),
 	scientific_name VARCHAR(50),
-	is_pet VARCHAR(50)
+	is_pet BOOL
 );
 insert into animals (common_name, scientific_name, is_pet) values ('Thrasher, curve-billed', 'Toxostoma curvirostre', false), 
 ('Ringtail, common', 'Pseudocheirus peregrinus', true), 
