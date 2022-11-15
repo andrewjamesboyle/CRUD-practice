@@ -118,6 +118,14 @@ describe('animals routes tests', () => {
     expect(resp.body.is_pet).toBe(true);
   });
 
+  it('#DELETE /animals/:id should delete a particular animal', async () => {
+    const resp = await request(app).delete('/animals/1');
+    expect(resp.status).toBe(200);
+
+    const newResp = await request(app).get('/animals/1');
+    expect(newResp.status).toBe(404);
+  });
+
   afterAll(() => {
     pool.end();
   });
