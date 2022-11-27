@@ -53,3 +53,28 @@ insert into CAR_DATA (model, make, year) values
 ('Caliber', 'Dodge', 2009),
 ('Insight', 'Honda', 2011),
 ('944', 'Porsche', 1988);
+
+DROP TABLE IF EXISTS books
+
+create table books (
+	id INT GENERATED ALWAYS AS IDENTITY,
+	title VARCHAR(50),
+	isbn_number VARCHAR(50),
+	quote TEXT
+);
+insert into books (title, isbn_number, quote) values 
+('Regrant', '505522812-1', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.'),
+('Zamit', '836980782-8', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.'),
+('Bigtax', '909675990-7', 'Donec quis orci eget orci vehicula condimentum.'),
+('Vagram', '928846466-2', 'Pellentesque viverra pede ac diam.'),
+('Subin', '451047688-4', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.'),
+('It', '681786985-4', 'Nulla tempus.'),
+('Regrant', '920290658-0', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae, Mauris viverra diam vitae quam.'),
+('Transcof', '590482105-0', 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.'),
+('Zoolab', '601690250-0', 'Phasellus in felis.'),
+('Sub-Ex', '155900774-5', 'Maecenas pulvinar lobortis est.'),
+('Fix San', '161951628-4', 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.'),
+('Regrant', '702218725-8', 'Duis ac nibh.'),
+('Keylex', '648398352-2', 'Duis bibendum.'),
+('Flexidy', '730954847-7', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae, Mauris viverra diam vitae quam.'),
+('Rank', '165278636-8', 'Nulla suscipit ligula in lacus.');
