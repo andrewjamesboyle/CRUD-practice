@@ -101,6 +101,19 @@ describe('cars routes tests', () => {
     expect(resp.body).toEqual(expected);
   });
 
+  it('#POST /cars creates a new car', async () => {
+    const newCar = {
+      model: 'WRX',
+      make: 'Subaru',
+      year: 2022,
+    };
+    const resp = await request(app).post('/cars').send(newCar);
+    expect(resp.body).toEqual({
+      id: expect.any(Number),
+      ...newCar,
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
