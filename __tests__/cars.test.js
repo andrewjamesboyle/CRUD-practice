@@ -114,6 +114,11 @@ describe('cars routes tests', () => {
     });
   });
 
+  it('#PUT /cars/:id should update an existing car', async () => {
+    const resp = await request(app).put('/cars/1').send({ year: 2004 });
+    expect(resp.body.year).toBe(2004);
+  });
+
   afterAll(() => {
     pool.end();
   });
