@@ -78,3 +78,30 @@ INSERT INTO books_data (title, isbn_number, quote) VALUES
 ('Keylex', '648398352-2', 'Duis bibendum.'),
 ('Flexidy', '730954847-7', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae, Mauris viverra diam vitae quam.'),
 ('Rank', '165278636-8', 'Nulla suscipit ligula in lacus.');
+
+
+DROP TABLE IF EXISTS drugs;
+
+CREATE TABLE drugs (
+	id INT GENERATED ALWAYS AS IDENTITY,
+	company VARCHAR(50),
+	otc_name TEXT,
+	rx_name TEXT
+);
+
+INSERT INTO drugs (company, otc_name, rx_name) VALUES 
+('Cardinal Health', 'leader sinus congestion and pain', 'Acetaminophen, Phenylephrine HCl'),
+('Vertical Pharmaceuticals, LLC', 'ConZip', 'tramadol hydrochloride'),
+('Rebel Distributors Corp', 'Ranitidine Hydrochloride', 'Ranitidine Hydrochloride'),
+('Sandoz Inc', 'Carbidopa, Levodopa, and Entacapone', 'Carbidopa, Levodopa, and Entacapone'),
+('Major Pharmaceuticals', 'Clonazepam', 'Clonazepam'),
+('Barr Laboratories Inc.', 'Dextroamphetamine Saccharate, Amphetamine Aspartate, Dextroamphetamine Sulfate and Amphetamine Sulfate', 'Dextroamphetamine Saccharate, Amphetamine Aspartate, Dextroamphetamine Sulfate and Amphetamine Sulfate'),
+('Medsep Corporation', 'Nutricel Additive System - AS-3', 'CP2D/AS-3 Anticoagulant and Additive System'),
+('REMEDYREPACK INC.', 'isosorbide mononitrate', 'isosorbide mononitrate'),
+('Cardinal Health', 'Leader Maximum Strength Invisible Acne', 'Benzoyl Peroxide 10%'),
+('Rebel Distributors Corp', 'Prednisone', 'Prednisone'),
+('Family Dollar Services Inc', 'family wellness hemorrhoidal', 'cocoa butter, phenylephrine hcl'),
+('DIRECT RX', 'AZITHROMYCIN', 'AZITHROMYCIN'),
+('Nephron Pharmaceuticals Corporation', 'S2', 'racepinephrine hydrochloride'),
+('WALGREEN CO.', 'Ibuprofen', 'Ibuprofen'),
+('Kareway Product, Inc.', 'Pink Bismuth', 'Bismuth Subsalicylate');
