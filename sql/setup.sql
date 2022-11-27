@@ -3,7 +3,7 @@
 DROP TABLE IF EXISTS animals;
 
 CREATE TABLE animals (
-	NT GENERATED ALWAYS AS IDENTITY,
+	id INT GENERATED ALWAYS AS IDENTITY,
 	common_name VARCHAR(50),
 	scientific_name VARCHAR(50),
 	is_pet BOOL
@@ -35,7 +35,7 @@ CREATE TABLE CAR_DATA (
 	id INT GENERATED ALWAYS AS IDENTITY,
 	model VARCHAR(50),
 	make VARCHAR(50),
-	year NUMBER
+	year INT
 );
 insert into CAR_DATA (model, make, year) values 
 ('Avalanche', 'Chevrolet', 2007),
