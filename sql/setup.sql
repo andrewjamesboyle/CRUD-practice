@@ -1,6 +1,7 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS animals;
+DROP TABLE IF EXISTS books_data;
 
 CREATE TABLE animals (
 	id INT GENERATED ALWAYS AS IDENTITY,
@@ -54,15 +55,14 @@ insert into CAR_DATA (model, make, year) values
 ('Insight', 'Honda', 2011),
 ('944', 'Porsche', 1988);
 
-DROP TABLE IF EXISTS books
 
-create table books (
+CREATE TABLE books_data (
 	id INT GENERATED ALWAYS AS IDENTITY,
 	title VARCHAR(50),
 	isbn_number VARCHAR(50),
 	quote TEXT
 );
-insert into books (title, isbn_number, quote) values 
+INSERT INTO books_data (title, isbn_number, quote) VALUES 
 ('Regrant', '505522812-1', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.'),
 ('Zamit', '836980782-8', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.'),
 ('Bigtax', '909675990-7', 'Donec quis orci eget orci vehicula condimentum.'),
