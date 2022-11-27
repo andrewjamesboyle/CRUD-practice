@@ -103,6 +103,19 @@ describe('drugs routes tests', () => {
     expect(resp.body).toEqual(expected);
   });
 
+  it('#POST /drugs creates a new drug', async () => {
+    const newDrug = {
+      company: 'MagicRx',
+      otc_name: 'Happy Pills',
+      rx_name: 'SSRI',
+    };
+    const resp = await request(app).post('/drugs').send(newDrug);
+    expect(resp.body).toEqual({
+      id: expect.any(Number),
+      ...newDrug,
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
