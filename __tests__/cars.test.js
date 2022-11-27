@@ -119,6 +119,14 @@ describe('cars routes tests', () => {
     expect(resp.body.year).toBe(2004);
   });
 
+  it('#DELETE /cars/:id should delete a particular car', async () => {
+    const resp = await request(app).delete('/cars/1');
+    expect(resp.status).toBe(200);
+
+    const newResp = await request(app).get('/cars/1');
+    expect(newResp.status).toBe(404);
+  });
+
   afterAll(() => {
     pool.end();
   });
