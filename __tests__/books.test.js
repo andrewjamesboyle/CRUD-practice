@@ -103,6 +103,19 @@ describe('books routes tests', () => {
     expect(resp.body).toEqual(expected);
   });
 
+  it('#POST /books creates a new book', async () => {
+    const newBook = {
+      title: 'HuckFinn',
+      isbn_number: '12',
+      quote: 'a direct quote from huckfinn',
+    };
+    const resp = await request(app).post('/books').send(newBook);
+    expect(resp.body).toEqual({
+      id: expect.any(Number),
+      ...newBook,
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
