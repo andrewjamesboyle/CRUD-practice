@@ -92,6 +92,17 @@ describe('drugs routes tests', () => {
     `);
   });
 
+  it('get/:id returns details of a single drug', async () => {
+    const resp = await request(app).get('/drugs/1');
+    const expected = {
+      id: expect.any(Number),
+      company: 'Cardinal Health',
+      otc_name: 'leader sinus congestion and pain',
+      rx_name: 'Acetaminophen, Phenylephrine HCl',
+    };
+    expect(resp.body).toEqual(expected);
+  });
+
   afterAll(() => {
     pool.end();
   });
