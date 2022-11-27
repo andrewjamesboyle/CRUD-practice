@@ -116,6 +116,11 @@ describe('books routes tests', () => {
     });
   });
 
+  it('#PUT /books/:id should update an existing book', async () => {
+    const resp = await request(app).put('/books/1').send({ title: 'The Odyssey' });
+    expect(resp.body.title).toBe('The Odyssey');
+  });
+
   afterAll(() => {
     pool.end();
   });
