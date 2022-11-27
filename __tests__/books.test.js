@@ -121,6 +121,14 @@ describe('books routes tests', () => {
     expect(resp.body.title).toBe('The Odyssey');
   });
 
+  it('#DELETE /books/:id should delete a particular book', async () => {
+    const resp = await request(app).delete('/books/1');
+    expect(resp.status).toBe(200);
+
+    const newResp = await request(app).get('/books/1');
+    expect(newResp.status).toBe(404);
+  });
+
   afterAll(() => {
     pool.end();
   });
