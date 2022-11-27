@@ -92,6 +92,17 @@ describe('books routes tests', () => {
     `);
   });
 
+  it('get/:id returns details of a single book', async () => {
+    const resp = await request(app).get('/books/1');
+    const expected = {
+      id: expect.any(Number),
+      title: 'Regrant',
+      isbn_number: expect.any(String),
+      quote: expect.any(String),
+    };
+    expect(resp.body).toEqual(expected);
+  });
+
   afterAll(() => {
     pool.end();
   });
