@@ -114,19 +114,19 @@ CREATE TABLE employees (
 	skills VARCHAR(50),
 	education VARCHAR(50)
 );
-insert into employees (id, position, skills, education) values 
-('Programmer Analyst II', 'Twisted', 'Centro Universitario de Occidente');
-('Account Coordinator', 'EBSD', 'Linton University College');
-('Senior Quality Engineer', 'Visual Basic', 'Quinnipiac College');
-('Marketing Assistant', 'Key Opinion Leaders', 'Juntendo University');
-('Computer Systems Analyst IV', 'OS/390', 'University Campus Suffolk');
-('Technical Writer', 'BPMN', 'Universidade de Marília');
-('Civil Engineer', 'DSDM', 'Ludwik Solski State Academy of Theatre in Cracow');
-('Executive Secretary', 'Sungard GMI', 'Claremont Lincoln University');
-('Food Chemist', 'Equity Trading', 'State University of New York College at Oneonta');
-('Quality Control Specialist', 'MCITP', 'Universidad Panamericana');
-('Human Resources Assistant I', 'KDB+', 'Universidade Federal Rural do Semi-Árido');
-('Senior Developer', 'VNA', 'Universitas Tanjungpura');
-('Tax Accountant', 'IBM Content Manager', 'Zhejiang Forestry University');
-('Recruiting Manager', 'Hydrogeology', 'Gombe State University');
+insert into employees (position, skills, education) values 
+('Programmer Analyst II', 'Twisted', 'Centro Universitario de Occidente'),
+('Coordinator', 'EBSD', 'Linton University College'),
+('Senior Quality Engineer', 'Visual Basic', 'Quinnipiac College'),
+('Marketing Assistant', 'Key Opinion Leaders', 'Juntendo University'),
+('Computer Systems Analyst IV', 'OS/390', 'University Campus Suffolk'),
+('Technical Writer', 'BPMN', 'Universidade de Marília'),
+('Civil Engineer', 'DSDM', 'Ludwik Solski State Academy of Theatre in Cracow'),
+('Executive Secretary', 'Sungard GMI', 'Claremont Lincoln University'),
+('Food Chemist', 'Equity Trading', 'State University of New York College at Oneonta'),
+('Quality Control Specialist', 'MCITP', 'Universidad Panamericana'),
+('Human Resources Assistant I', 'KDB+', 'Universidade Federal Rural do Semi-Árido'),
+('Senior Developer', 'VNA', 'Universitas Tanjungpura'),
+('Tax Accountant', 'IBM Content Manager', 'Zhejiang Forestry University'),
+('Recruiting Manager', 'Hydrogeology', 'Gombe State University'),
 ('Marketing Assistant', 'Eclipse CDT', 'Durham College');
