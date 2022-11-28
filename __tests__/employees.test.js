@@ -103,6 +103,19 @@ describe('employees routes tests', () => {
     expect(resp.body).toEqual(expected);
   });
 
+  it('#POST /employees creates a new employee', async () => {
+    const newEmployee = {
+      position: 'Head Chef',
+      skills: 'Chef',
+      education: 'Culinary Institute of America',
+    };
+    const resp = await request(app).post('/employees').send(newEmployee);
+    expect(resp.body).toEqual({
+      id: expect.any(Number),
+      ...newEmployee,
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
