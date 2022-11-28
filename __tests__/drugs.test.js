@@ -121,6 +121,14 @@ describe('drugs routes tests', () => {
     expect(resp.body.company).toBe('Pfizer');
   });
 
+  it('#DELETE /drugs/:id should delete a particular drug', async () => {
+    const resp = await request(app).delete('/drugs/1');
+    expect(resp.status).toBe(200);
+
+    const newResp = await request(app).get('/drugs/1');
+    expect(newResp.status).toBe(404);
+  });
+
   afterAll(() => {
     pool.end();
   });
