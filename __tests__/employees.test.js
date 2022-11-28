@@ -121,6 +121,14 @@ describe('employees routes tests', () => {
     expect(resp.body.position).toBe('Chef');
   });
 
+  it('#DELETE /employees/:id should delete a particular employee', async () => {
+    const resp = await request(app).delete('/employees/1');
+    expect(resp.status).toBe(200);
+
+    const newResp = await request(app).get('/employees/1');
+    expect(newResp.status).toBe(404);
+  });
+
   afterAll(() => {
     pool.end();
   });
