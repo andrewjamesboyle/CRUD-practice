@@ -92,6 +92,17 @@ describe('employees routes tests', () => {
     `);
   });
 
+  it('get/:id returns details of a single employee', async () => {
+    const resp = await request(app).get('/employees/1');
+    const expected = {
+      id: expect.any(Number),
+      position: 'Programmer Analyst II',
+      skills: 'Twisted',
+      education: 'Centro Universitario de Occidente',
+    };
+    expect(resp.body).toEqual(expected);
+  });
+
   afterAll(() => {
     pool.end();
   });
