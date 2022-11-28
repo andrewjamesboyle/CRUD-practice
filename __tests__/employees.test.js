@@ -116,6 +116,11 @@ describe('employees routes tests', () => {
     });
   });
 
+  it('#PUT /employees/:id should update an existing employee', async () => {
+    const resp = await request(app).put('/employees/1').send({ position: 'Chef' });
+    expect(resp.body.position).toBe('Chef');
+  });
+
   afterAll(() => {
     pool.end();
   });
