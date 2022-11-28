@@ -116,6 +116,11 @@ describe('drugs routes tests', () => {
     });
   });
 
+  it('#PUT /drugs/:id should update an existing drug', async () => {
+    const resp = await request(app).put('/drugs/1').send({ company: 'Pfizer' });
+    expect(resp.body.company).toBe('Pfizer');
+  });
+
   afterAll(() => {
     pool.end();
   });
